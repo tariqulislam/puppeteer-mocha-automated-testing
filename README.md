@@ -1,6 +1,7 @@
 
 # puppeteer-mocha-automated-testing
 ![logo image](https://github.com/tariqulislam/puppeteer-mocha-automated-testing/blob/master/logo.png)
+
 Automated the Testing using Puppeteer, Mocha, chai. For example we can use linkidin account and few functionality to automated the testing
 
 ## Prequesites for automated testing
