@@ -1,4 +1,5 @@
 const { expect } = require('chai');
+const open = require('open');
 
 describe('simple test for fv main console', async  () => {
     let page;
@@ -26,17 +27,17 @@ describe('simple test for fv main console', async  () => {
         const passwordInput = "#login-password";
         const submitSelector = "#login-submit";
          
-         fvEmail = await page.$(emailInput);
-         fvPassword = await page.$(passwordInput);
-         fvSubmit = await page.$(submitSelector);
+         linkEmail = await page.$(emailInput);
+         linkPassword = await page.$(passwordInput);
+         linkSubmit = await page.$(submitSelector);
 
-         await fvEmail.click({ clickCount: 3 });
-         await fvEmail.type(''); // add the email address for linkedin //
+         await linkEmail.click({ clickCount: 3 });
+         await linkEmail.type(''); // add the email address for linkedin //
 
-         await fvPassword.click({ clickCount: 3});
-         await fvPassword.type(''); // add password for linkedin account
+         await linkPassword.click({ clickCount: 3});
+         await linkPassword.type(''); // add password for linkedin account
 
-         await fvSubmit.click();
+         await linkSubmit.click();
          await page.waitFor(3000);
     });
 });

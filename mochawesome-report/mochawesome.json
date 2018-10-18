@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-10-18T11:20:56.267Z",
+    "end": "2018-10-18T11:21:39.988Z",
+    "duration": 43721,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "99b6c119-32df-4a7f-b045-06647be9e12c",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [
+      {
+        "title": "\"before all\" hook",
+        "fullTitle": "\"before all\" hook",
+        "timedOut": false,
+        "duration": 8873,
+        "pass": false,
+        "fail": false,
+        "pending": false,
+        "code": "global.expect = expect;\nglobal.browser = await puppeteer.launch(opts);",
+        "err": {},
+        "isRoot": true,
+        "uuid": "1b746f8c-275e-4994-905d-573e163d2b07",
+        "isHook": true,
+        "skipped": false
+      }
+    ],
+    "afterHooks": [
+      {
+        "title": "\"after all\" hook",
+        "fullTitle": "\"after all\" hook",
+        "timedOut": false,
+        "duration": 141,
+        "pass": false,
+        "fail": false,
+        "pending": false,
+        "code": "browser.close();\nopen('./mochawesome-report/mochawesome.html');\nglobal.browser = globalVariables.browser;\nglobal.expect = globalVariables.expect;",
+        "err": {},
+        "isRoot": true,
+        "uuid": "0e2cf309-edd4-4366-ae62-747a99180e7f",
+        "isHook": true,
+        "skipped": false
+      }
+    ],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "6dfc5ad6-c7dc-422d-92f4-f26f656d2ed3",
+        "title": "simple test for fv main console",
+        "fullFile": "/Users/tariqulislam/Development/node-playground/puppeteer-mocha-automated-testing/test/sample.spec.js",
+        "file": "/test/sample.spec.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "simple test for fv main console \"before all\" hook",
+            "timedOut": false,
+            "duration": 9494,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page = await browser.newPage();\nawait page.goto(\"https://www.linkedin.com/\");\nawait page.setViewport( { width: 1920, height: 1040} );",
+            "err": {},
+            "isRoot": false,
+            "uuid": "b84ee136-4f02-4df3-9896-ce4e87e7ff61",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "simple test for fv main console \"after all\" hook",
+            "timedOut": false,
+            "duration": 185,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await page.close();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "1a4750c0-1cb3-489c-9e1a-46ac94cd6189",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should login to home page",
+            "fullTitle": "simple test for fv main console should login to home page",
+            "timedOut": false,
+            "duration": 24992,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const emailInput = \"#login-email\";\nconst passwordInput = \"#login-password\";\nconst submitSelector = \"#login-submit\";\n \n linkEmail = await page.$(emailInput);\n linkPassword = await page.$(passwordInput);\n linkSubmit = await page.$(submitSelector);\n await linkEmail.click({ clickCount: 3 });\n await linkEmail.type('tariqul.islam.rony'); // add the email address for linkedin //\n await linkPassword.click({ clickCount: 3});\n await linkPassword.type(''); // add password for linkedin account\n await linkSubmit.click();\n await page.waitFor(3000);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6e7a6f79-cfa8-4ccf-9fb9-49b506992866",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "6e7a6f79-cfa8-4ccf-9fb9-49b506992866"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 24992,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 0
+  },
+  "copyrightYear": 2018
+}

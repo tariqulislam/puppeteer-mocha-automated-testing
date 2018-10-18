@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const { expect } = require('chai');
+const open = require('open');
 
 const _ = require('lodash');
 
@@ -20,6 +21,7 @@ before (async () => {
 
 after ( () => {
   browser.close();
+  open('./mochawesome-report/mochawesome.html');
   global.browser = globalVariables.browser;
   global.expect = globalVariables.expect;
 });
