@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 0  test/bootstrap.js --recursive test --reporter mochawesome"
+    "test": "mocha --timeout 0  ./test/bootstrap.js --recursive test --reporter mochawesome"
   },
   "keywords": [],
   "author": "",
