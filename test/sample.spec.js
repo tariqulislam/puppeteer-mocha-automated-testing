@@ -4,7 +4,7 @@ describe('simple test for fv main console', async  () => {
     before(async () => {
         page = await browser.newPage();
         await page.goto("http://localhost:2000/");
-        await page.setViewport( { width: 1920, height: 1040} );
+        await page.setViewport( { width: 1366, height: 786});
     });
 
     after(async function () {
@@ -40,7 +40,6 @@ describe('simple test for fv main console', async  () => {
 
          const expectedErrorMessage = "You have provided an incorrect email/username and/or password or maybe you are not in our system.";
          expect(expectedErrorMessage).to.eql(errorMessage);
-
          await page.waitFor(3000);
     });
 
@@ -74,10 +73,6 @@ describe('simple test for fv main console', async  () => {
             event.simulated=true;
             element.dispatchEvent(event);
         });
-
-        await page.evaluate(() => {
-            const vaultTableSelector = "#root > div > div.container-fluid > div > div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main > div > div > div.row > div:nth-child(2) > div > table"
-        })
         await page.waitFor(3000);
     });
 
@@ -86,7 +81,17 @@ describe('simple test for fv main console', async  () => {
          const detailsButton = await page.$(selector);
          await detailsButton.click();
          await page.waitForNavigation();
-         await page.waitForResponse();
-        // await page.waitFor(3000);
+
+        // await page.waitForResponse();
+        
+        // const checkDetailsLoadSuccess = await page.evaluate(() => {
+        //     const selector = "#root > div > div.container-fluid > div > div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main > div > div > div > div:nth-child(4) > h4";
+        //     const msg = document.querySelector(selector).innerText;
+        //     return msg;
+        // });
+        // const mesg = "Basic Information";
+        // expect(mesg).to.eql(checkDetailsLoadSuccess)
+        await page.waitFor(3000);
+
     })
 });

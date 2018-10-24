@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const { expect } = require('chai');
-const open = require('open');
+const opn = require('opn');
+const cmd = require('node-cmd');
 
 const _ = require('lodash');
 
@@ -10,7 +11,7 @@ const opts = {
     headless: false,
     slowMo: 100,
     timeout: 0,
-    args: ['--start-maximized', '--window-size=1920,1040'] 
+    args: ['--start-maximized', '--window-size=1366,786'] 
 }
 
 before (async () => {
@@ -21,7 +22,9 @@ before (async () => {
 
 after ( () => {
   browser.close();
-  open('./mochawesome-report/mochawesome.html');
+  setTimeout( () => { cmd.run('node server.js');}, 5000)
+  setTimeout(() => {opn('http://localhost:9988');}, 2000);
+ // open('./mochawesome-report/mochawesome.html');
   global.browser = globalVariables.browser;
   global.expect = globalVariables.expect;
 });

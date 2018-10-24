@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "local-web-server": "^2.6.0",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.0",
-    "open": "0.0.5",
-    "puppeteer": "^1.9.0"
+    "node-cmd": "^3.0.0",
+    "opn": "^5.4.0",
+    "puppeteer-core": "^1.9.0"
   }
 }
